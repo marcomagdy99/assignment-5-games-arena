@@ -1,0 +1,645 @@
+:root {
+    --main-color: #cbfe1c;
+    --main-background: #0b0e13;
+    --transition: 0.5s;
+}
+::selection{
+    background-color: var(--main-color);
+    color: black;
+}
+h1, h2, h3, h4, h5, h6{
+      font-family:  Days One, sans-serif;
+
+}
+body {
+  background-color: var(--main-background);
+
+
+}
+a{
+    text-decoration: none;
+}
+.main-color{
+    color: var(--main-color);
+}
+.section-header{
+    margin-bottom: 30px;
+    text-align: center;
+}
+.section-header p{
+    color: var(--main-color);
+    position: relative;
+    width: fit-content;
+    margin-inline: auto;
+}
+.section-header h3{
+    color: white;
+    font-size: 40px;
+    line-height: 1.5;
+}
+.section-header p::before{
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 2px;
+    top: 50%;
+    left: -120%;
+    background: linear-gradient(to right, transparent , var(--main-color));
+}
+.section-header p::after{
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 2px;
+    top: 50%;
+    right: -120%;
+    background: linear-gradient(to right, var(--main-color), transparent) ;
+}
+@media ( width < 687px){
+    .section-header h3{
+        font-size: 20px;
+    }
+}
+/* start navbar */
+.navbar {
+    background-color: var(--main-background) !important;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar .logo {
+    color: var(--main-color);
+}
+
+.navbar .logo i {
+    font-size: 20px;
+}
+
+.navbar .logo a {
+    color: var(--main-color);
+}
+
+.navbar .links a {
+    color: white;
+}
+
+.navbar .links .nav-item .active {
+    color: var(--main-color);
+}
+
+.navbar form {
+    color: white;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar form button {
+    background-color: var(--main-color);
+    color: black;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    padding: 8px 20px;
+}
+.navbar form button:hover {
+    background-color: var(--main-color);
+}
+.navbar form button:after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100px;
+    background: linear-gradient(90deg, #0000, #fff6, #0000);
+    left: -100%;
+    bottom: 0;
+    transition: var(--transition) ;
+}
+.navbar form button:hover::after{
+    left: 100%;
+}
+.navbar form button:hover {
+    color: black;
+}
+.navbar > button i {
+    color: white;
+}
+.navbar form span{
+    display: none;
+}
+@media (width < 993px) {
+    .navbar{
+        margin-inline: auto;
+    }
+
+    .navbar .logo {
+        margin-bottom: 20px;
+    }
+
+    .navbar ul {
+        border-bottom: 1px solid rgba(128, 128, 128, 0.422);
+        border-top: 1px solid gray;
+        padding: 15px;
+    }
+
+    .navbar ul li {
+        margin-bottom: 20px;
+    }
+
+    .navbar form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+        margin-top: 25px;
+    }
+
+    .navbar form button {
+        width: 100%;
+    }
+    .navbar form span{
+        display: inline ;
+    }
+}
+
+/* end navbar */
+/* start hero */
+.hero{
+    background-image:   linear-gradient(rgba(0, 0, 0, 0.873), rgba(0, 0, 0, 0.818)) ,  url(../images/hero-bg.jpg);
+    background-position: fixed;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+
+}
+.hero:before{
+    content: "";
+    background-color: rgb(8, 8, 8);
+    width: 60px;
+    position: absolute;
+    height: 60px;
+    left: 0;
+    bottom: 0;
+}
+.hero .container{
+    padding-block: 100px;
+}
+.hero .container .landing h3{
+    font-size: 60px !important;
+    color: white;
+    font-weight: bold;
+}
+.hero .container .landing h3 span{
+    color: var(--main-color);
+}
+.hero .container .landing p{
+    color: white;
+    font-weight: 100;
+}
+.hero .container .landing .buttons button{
+    padding: 15px 25px;
+    border: 2px solid var(--main-color);
+    font-weight: bold;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: var(--transition);
+}
+@media ( max-width: 992px){
+    
+}
+@media ( max-width: 687px){
+    .hero .container .landing h3{
+    font-size: 35px !important;
+    text-align: center;
+}
+    .hero .container .landing p{
+        text-align: center;
+        font-size: 14px;
+    }
+    .hero .container .landing .buttons{
+        flex-direction: column;
+}
+}
+.hero .container .landing .buttons button:first-of-type{
+    background-color: var(--main-color);
+}
+.hero .container .landing .buttons button:first-of-type:after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100px;
+background: linear-gradient(90deg, #0000, #fff6, #0000);
+    left: -100%;
+    bottom: 0;
+    transition: var(--transition) ;
+}
+.hero .container .landing .buttons button:first-of-type:hover::after{
+    left: 100%;
+}
+.hero .container .landing .buttons button:last-of-type{
+    background-color: transparent;
+    color: var(--main-color);
+}
+.hero .container .landing .buttons button:last-of-type:hover{
+    background-color: var(--main-color);
+    color: black;
+}
+.hero .container .landing .buttons button:last-of-type:after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100px;
+background: linear-gradient(90deg, #0000, #fff6, #0000);
+    left: -100%;
+    bottom: 0;
+    transition: var(--transition) ;
+}
+.hero .container .landing .buttons button:last-of-type:hover::after{
+    left: 100%;
+}
+.hero .container .image{
+    background-color: var(--main-color);
+    padding: 5px;
+    position: relative;
+    width: 90%;
+}
+
+.hero .container .image .info{
+    position: absolute;
+    background-color: var(--main-background);
+    border-radius: 15px;
+    bottom: -7%;
+    left: -7%;
+    border: 1px solid rgba(255, 255, 255, 0.252);
+    padding: 12px;
+}
+.hero .container .image .info p{
+    margin-bottom: 0;
+    font-weight: bold;
+}
+.hero .container .image .info i{
+   color: var(--main-color);
+   font-size: 20px;
+}
+.hero .container .image .info p:first-of-type{
+font-size: 12px;
+color: rgb(162, 160, 160);
+}
+.hero .container .image .info p:last-of-type{
+    color: white;
+}
+@media (max-width: 867px){
+    .hero .container .image .info{
+        padding: 9px;
+        left: -2%;
+    }
+    .hero .container .image .info i{
+        font-size: 15px;
+    }
+    .hero .container .image .info p{
+        font-size: 14px;
+    }
+}
+/* end hero */
+/* start our-games */
+.our-games{
+    background-color: var(--main-background);
+    padding-block: 100px;
+}
+#carouselExampleCaptions{
+    background-color: var(--main-background);
+}
+.our-games .carousel-item .top{
+    top: -20%;
+    gap: 10px;
+    left: 10%;
+    transition: var(--transition);
+}
+.our-games .carousel-item .my-card{
+    overflow: hidden;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+.our-games .carousel-item .my-card:hover .top{
+    top: 0;
+}
+.our-games .carousel-item .my-card:hover{
+    border-color: var(--main-color);
+}
+.our-games .carousel-item .top span{
+    display: flex;
+    gap: 5px;
+    font-size: 11px;
+    background-color: #384C20;
+    align-items: center;
+    padding: 2px 4px;
+    border-radius: 10px;
+}
+.our-games .carousel-item .top span i{
+    color: var(--main-color);
+}
+
+.our-games .my-card img {
+    transition: transform var(--transition);
+}
+
+.our-games .my-card:hover img {
+    transform: scale(1.08);
+}
+.carousel-control-next, .carousel-control-prev{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 50%;
+        transition: var(--transition);
+
+}
+.carousel-control-next i, .carousel-control-prev i{
+    color: white;
+    font-size: 17px;
+    transition: var(--transition);
+}
+.carousel-control-next:hover i
+, .carousel-control-prev:hover i{
+    color: var(--main-color);
+}
+.carousel-control-next:hover , .carousel-control-prev:hover{
+    border-color: var(--main-color);
+}
+.our-games .my-buttons button:last-of-type{
+    background-color: rgba(243, 243, 243, 0);
+    font-size: 14px;
+    color: var(--main-color);
+    padding: 15px 25px;
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.our-games .my-buttons button:last-of-type:hover{
+    color: black;
+    background-color: var(--main-color);
+}
+
+/* .our-games .carousel-item .my-card{
+    background-image: linear-gradient(var(--main-color) , var(--main-color)  );
+    border-radius: 15px;
+    position: absolute;
+
+} */
+/* end our-games */
+
+.our-games .carousel-item .bottom {
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    padding: 25px 15px 15px;
+    background: linear-gradient(to top, rgba(203, 254, 28, 0.9), transparent);
+    transition: var(--transition);
+}
+.our-games .carousel-item .my-card:hover .bottom {
+    bottom: 0;
+}
+/* start what-we-do */
+.what-we-do .building-card{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+.what-we-do .building-card .my-card .icon{
+    background-color: #1E2939;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.what-we-do .building-card .my-card{
+    border: 2px solid #1e2939;
+    background-color: #1a1a1a;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+.what-we-do .building-card .my-card:hover{
+    border-color: var(--main-color);
+}
+.what-we-do .building-card .my-card::before{
+        content: "";
+    border-width: 19px;
+    border-style: solid;
+    border-color: transparent var(--main-color) transparent transparent;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    transform: rotate( 40deg);
+transition: var(--transition);
+}
+.what-we-do .building-card .my-card::after{
+        content: "";
+    border-width: 19px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--main-color);
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    transform: rotate( 40deg);
+transition: var(--transition);
+}
+.what-we-do .building-card .my-card:hover::after{
+    bottom: -5px;
+    right: -5px;
+}
+.what-we-do .building-card .my-card:hover::before{
+    top: -5px;
+    left: -5px;
+}
+@media (width < 992px){
+    .what-we-do .building-card{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+}
+/* end what-we-do */
+/* start games */
+.games{
+    position: relative;
+}
+.games::after{
+        content: "";
+    background: linear-gradient(90deg, transparent, var(--main-color) 20%, var(--main-color) 80%, transparent);
+    width: 80%;
+    max-width: 600px;
+    height: 2px;
+    box-shadow: 0 0 10px var(--main-color), 0 0 20px #cbfe1c4d;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.games:before{
+    content: "";
+     position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(201, 254, 28, 0.759) 0%, transparent 70%);
+  z-index: 0;
+}
+.games .container-fluid .move-left,
+.games .container-fluid .move-right{
+    display: flex;
+    gap: 15px;
+    width: max-content;
+}
+.games .container-fluid img{
+    width: 90px;
+    height: 90px;
+    border-radius: 15px;
+}
+.move-left {
+  animation: scrollLeft 20s linear infinite;
+}
+@keyframes scrollLeft {
+  to { transform: translateX(-50%); }
+}
+/* حركة اليمين */
+.move-right {
+  animation: scrollRight 20s linear infinite;
+}
+@keyframes scrollRight {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+/* end games */
+/* start our teams */
+
+.our-team .our-members .text .vertical{
+      writing-mode: vertical-rl;
+      margin-right: 0;
+      margin-left: 10px;
+      color: var(--main-color);
+}
+.our-team .our-members .text span{
+    color: oklch(70.7% .022 261.325);
+    font-size: 10px;
+}
+.our-team .our-members .text p {
+    font-size: 12px;
+}
+.our-team .our-members .member{
+    position: relative;
+}
+.our-team .our-members .member::after{
+    content: "";
+    backdrop-filter: grayscale() ;
+    z-index: 1;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    transition: var(--transition);
+}
+.our-team .our-members .member:hover::after{
+    height: 0;
+
+}
+/* end our teams */
+/* start contact us*/
+.contact .container .info{
+    background-color:#1E2939;
+    padding: 40px 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+.contact .container .info i{
+    background-color: var(--main-color);
+    display: flex;
+    font-size: 25px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    padding: 30px;
+}
+.contact .container .info .text p{
+    font-size: 15px;
+}
+.contact .container .community{
+    background-image: linear-gradient( to right,  var(--main-color) ,  #30E16F);
+        border-radius: 15px;
+        color: black;
+            padding: 40px 30px;
+}
+.contact .container .community ul li i{
+    color: var(--main-color);
+    background-color: black;
+     display: flex;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    padding: 25px;
+}
+.contact .container .send-message{
+    background-color: #1E2939;
+    padding: 40px 30px;
+    border-radius: 15px;
+}
+.contact .container .send-message form input:focus,
+.contact .container .send-message form select:focus,
+.contact .container .send-message form textarea:focus{
+    outline: none;
+    border: 2px solid var(--main-color);
+}
+.contact .container .send-message form input, 
+.contact .container .send-message form select,
+.contact .container .send-message form textarea{
+    border: transparent;
+    background-color: #364153;
+    border: 2px solid #4a5565;
+    padding: 10px;
+    border-radius: 12px;
+}
+.contact .container .send-message form select{
+    color: white;
+}
+.contact .container .send-message form textarea{
+    height: 150px;
+}
+.contact .container .send-message form button{
+    background-color: var(--main-color);
+    border: none;
+}
+/* end contact us*/
+footer a{
+    transition: var(--transition);
+    color: #ffffff80
+;
+}
+footer a:hover{
+    color: var(--main-color);
+}
+footer .right{
+justify-content: space-between;
+}
+@media(max-width: 867px){
+
+footer .right{
+justify-content: center;
+}
+}
